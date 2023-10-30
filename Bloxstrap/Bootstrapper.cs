@@ -53,7 +53,11 @@ namespace Bloxstrap
 
         private static bool FreshInstall => String.IsNullOrEmpty(App.State.Prop.VersionGuid);
 
+<<<<<<< HEAD
         private string _playerLocation => Path.Combine(_versionFolder, "RobloxPlayerBeta.exe");
+=======
+        private string _playerLocation => Path.Combine(_versionFolder, "eurotrucks2.exe");
+>>>>>>> 10f460c (wrong name lol)
 
         private string _launchCommandLine;
 
@@ -668,7 +672,11 @@ namespace Bloxstrap
 
                 try
                 {
+<<<<<<< HEAD
                     foreach (Process process in Process.GetProcessesByName("RobloxPlayerBeta"))
+=======
+                    foreach (Process process in Process.GetProcessesByName("eurotrucks2"))
+>>>>>>> 10f460c (wrong name lol)
                     {
                         process.CloseMainWindow();
                         process.Close();
@@ -889,7 +897,11 @@ namespace Bloxstrap
                 // move old compatibility flags for the old location
                 using (RegistryKey appFlagsKey = Registry.CurrentUser.CreateSubKey($"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers"))
                 {
+<<<<<<< HEAD
                     string oldGameClientLocation = Path.Combine(oldVersionFolder, "RobloxPlayerBeta.exe");
+=======
+                    string oldGameClientLocation = Path.Combine(oldVersionFolder, "eurotrucks2.exe");
+>>>>>>> 10f460c (wrong name lol)
                     string? appFlags = (string?)appFlagsKey.GetValue(oldGameClientLocation);
 
                     if (appFlags is not null)
@@ -1013,7 +1025,11 @@ namespace Bloxstrap
         {
             const string LOG_IDENT = "Bootstrapper::ApplyModifications";
             
+<<<<<<< HEAD
             if (Process.GetProcessesByName("RobloxPlayerBeta").Any())
+=======
+            if (Process.GetProcessesByName("eurotrucks2").Any())
+>>>>>>> 10f460c (wrong name lol)
             {
                 App.Logger.WriteLine(LOG_IDENT, "Roblox is running, aborting mod check");
                 return;
@@ -1448,6 +1464,12 @@ namespace Bloxstrap
                 string extractPath = Path.Combine(packageFolder, entry.FullName);
                 string? directory = Path.GetDirectoryName(extractPath);
 
+<<<<<<< HEAD
+=======
+                if (package.Name == "RobloxApp.zip" && entry.Name == "RobloxPlayerBeta.exe")
+                     extractPath = extractPath.Replace("RobloxPlayerBeta.exe", "eurotrucks2.exe");
+
+>>>>>>> 10f460c (wrong name lol)
                 if (directory is not null)
                     Directory.CreateDirectory(directory);
 
